@@ -1,0 +1,337 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>ZUS wakacje składkowe · инструкция по новому интерфейсу</title>
+<style>
+@font-face{font-family:'Montserrat';src:url('fonts/Montserrat-var.ttf') format('truetype');font-weight:100 900}
+@font-face{font-family:'Lora';src:url('fonts/Lora-var.ttf') format('truetype');font-weight:400 700}
+:root{--ground:#F4F1EA;--panel:#fff;--signal:#B74C2C;--metric:#1E4D3A;--text:#141414;--muted:#6B6558;--line:#E3DCCD}
+*{box-sizing:border-box}
+body{margin:0;background:var(--ground);color:var(--text);font-family:'Montserrat',system-ui,sans-serif;line-height:1.55}
+.wrap{max-width:1120px;margin:0 auto;padding:0 24px 72px}
+header{padding:56px 0 32px;border-bottom:1px solid var(--line)}
+.kicker{font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:var(--signal);font-weight:600}
+h1{font-family:'Lora',Georgia,serif;font-size:clamp(28px,4vw,46px);line-height:1.15;margin:14px 0 12px;font-weight:600}
+.lead{color:var(--muted);max-width:62ch;font-size:17px}
+.facts{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:14px;margin:28px 0 8px}
+.fact{background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:14px 16px}
+.fact b{display:block;font-size:22px;color:var(--metric);font-family:'Lora',serif}
+.fact span{font-size:13px;color:var(--muted)}
+h2{font-family:'Lora',serif;font-size:22px;margin:44px 0 6px}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:18px;margin:18px 0;box-shadow:0 1px 2px rgba(20,20,20,.04)}
+.card-head{display:flex;gap:14px;align-items:flex-start;margin-bottom:14px}
+.num{font-family:'Lora',serif;font-size:20px;color:var(--signal);min-width:34px;font-weight:600}
+.card-head h3{margin:0 0 4px;font-size:17px}
+.card-head p{margin:0;color:var(--muted);font-size:14px;max-width:70ch}
+.badge{margin-left:auto;font-size:11px;letter-spacing:.06em;text-transform:uppercase;padding:4px 9px;border-radius:999px;white-space:nowrap}
+.badge.new{background:#EAF1EC;color:var(--metric)}
+.badge.old{background:#F7E9E3;color:var(--signal)}
+img{width:100%;height:auto;display:block;border:1px solid var(--line);border-radius:8px}
+.note{background:var(--panel);border-left:3px solid var(--signal);padding:16px 18px;border-radius:8px;margin:22px 0;font-size:15px}
+.note b{color:var(--signal)}
+footer{margin-top:56px;padding-top:22px;border-top:1px solid var(--line);color:var(--muted);font-size:13px;display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
+@media (max-width:640px){.card{padding:12px}.card-head{flex-wrap:wrap}.badge{margin-left:0}}
+</style>
+</head>
+<body>
+<div class="wrap">
+<header>
+  <div class="kicker">ZUS · eZUS · październik 2026</div>
+  <h1>Wakacje składkowe: инструкция по новому интерфейсу</h1>
+  <p class="lead">Собрано не по памяти и не по скриншотам прошлого года, а внутри живой системы: мастер RWS пройден от входа до сводки. Ниже — 22 экрана в том порядке, в котором их видит клиент: от страницы входа до черновика в списке отправки.</p>
+  <div class="facts">
+    <div class="fact"><b>11</b><span>шагов в мастере вместо прежних 23 кадров</span></div>
+    <div class="fact"><b>7311Z</b><span>код PKD в формате 2025 года</span></div>
+    <div class="fact"><b>5 МБ</b><span>общий лимит вложений · 1 МБ на файл</span></div>
+    <div class="fact"><b>0 zł</b><span>стоимость подготовки — только ваше время</span></div>
+  </div>
+</header>
+
+<h2>Что изменилось</h2>
+<div class="note">
+<b>23 кадра больше не соответствуют 23 шагам.</b> В новом eZUS мастер разбит на 11 шагов, а «лишние» кадры — это подэкраны: четыре части de minimis, просмотр документа, список неотправленных.
+<br><br>
+<b>Код PKD.</b> Система принимает 7311Z. Старый формат 73.11.Z возвращает «Podany kod PKD nie jest poprawny».
+<br><br>
+<b>Нельзя вписать месяц руками.</b> Период освобождения (11.2026) система ставит сама из заявления.
+</div>
+
+<h2>Экраны</h2>
+
+<figure class="card">
+  <div class="card-head">
+    <span class="num">01</span>
+    <div>
+      <h3>Вход в eZUS</h3>
+      <p>Страница логина login.gov.pl / PUE ZUS. Тот же экран, что и раньше, но без выбора «Клиентский / Плательщик» на входе.</p>
+    </div>
+    <span class="badge new">новый интерфейс</span>
+  </div>
+  <a href="screens/01.png" target="_blank"><img src="screens/01.png" alt="Вход в eZUS"></a>
+</figure>
+
+<figure class="card">
+  <div class="card-head">
+    <span class="num">02</span>
+    <div>
+      <h3>Profil zaufany</h3>
+      <p>Вход через Profil zaufany: логин и пароль. Дальше — код SMS.</p>
+    </div>
+    <span class="badge new">новый интерфейс</span>
+  </div>
+  <a href="screens/02.png" target="_blank"><img src="screens/02.png" alt="Profil zaufany"></a>
+</figure>
+
+<figure class="card">
+  <div class="card-head">
+    <span class="num">03</span>
+    <div>
+      <h3>Выбор способа входа</h3>
+      <p>После логина ZUS предлагает выбрать способ подтверждения — Profil zaufany, банк, приложение.</p>
+    </div>
+    <span class="badge new">новый интерфейс</span>
+  </div>
+  <a href="screens/03.png" target="_blank"><img src="screens/03.png" alt="Выбор способа входа"></a>
+</figure>
+
+<figure class="card">
+  <div class="card-head">
+    <span class="num">04</span>
+    <div>
+      <h3>Главная eZUS</h3>
+      <p>Рабочий стол плательщика: меню и поле поиска услуги.</p>
+    </div>
+    <span class="badge new">новый интерфейс</span>
+  </div>
+  <a href="screens/04.png" target="_blank"><img src="screens/04.png" alt="Главная eZUS"></a>
+</figure>
+
+<figure class="card">
+  <div class="card-head">
+    <span class="num">05</span>
+    <div>
+      <h3>Каталог услуг</h3>
+      <p>Ищем «wakacje składkowe» в каталоге услуг.</p>
+    </div>
+    <span class="badge new">новый интерфейс</span>
+  </div>
+  <a href="screens/05.png" target="_blank"><img src="screens/05.png" alt="Каталог услуг"></a>
+</figure>
+
+<figure class="card">
+  <div class="card-head">
+    <span class="num">06</span>
+    <div>
+      <h3>Карточка услуги</h3>
+      <p>Карточка RWS — кнопка запуска мастера. Здесь же описание услуги.</p>
+    </div>
+    <span class="badge new">новый интерфейс</span>
+  </div>
+  <a href="screens/06.png" target="_blank"><img src="screens/06.png" alt="Карточка услуги"></a>
+</figure>
+
+<figure class="card">
+  <div class="card-head">
+    <span class="num">07</span>
+    <div>
+      <h3>Шаг 1 · Informacje ogólne</h3>
+      <p>Выбор вида заявления. Три варианта; для первого раза — первый.</p>
+    </div>
+    <span class="badge new">новый интерфейс</span>
+  </div>
+  <a href="screens/07.png" target="_blank"><img src="screens/07.png" alt="Шаг 1 · Informacje ogólne"></a>
+</figure>
+
+<figure class="card">
+  <div class="card-head">
+    <span class="num">08</span>
+    <div>
+      <h3>Шаг 2 · Dane płatnika</h3>
+      <p>Данные подставляются из учетной записи: имя, NIP, PESEL, телефон. Только проверяем.</p>
+    </div>
+    <span class="badge new">новый интерфейс</span>
+  </div>
+  <a href="screens/08.png" target="_blank"><img src="screens/08.png" alt="Шаг 2 · Dane płatnika"></a>
+</figure>
+
+<figure class="card">
+  <div class="card-head">
+    <span class="num">09</span>
+    <div>
+      <h3>Шаг 3 · Treść wniosku</h3>
+      <p>Месяц и год освобождения система ставит сама (11.2026). Ввести вручную нельзя.</p>
+    </div>
+    <span class="badge new">новый интерфейс</span>
+  </div>
+  <a href="screens/09.png" target="_blank"><img src="screens/09.png" alt="Шаг 3 · Treść wniosku"></a>
+</figure>
+
+<figure class="card">
+  <div class="card-head">
+    <span class="num">10</span>
+    <div>
+      <h3>Шаг 3 · пояснение</h3>
+      <p>Тот же экран ниже: пояснение, какие взносы освобождаются.</p>
+    </div>
+    <span class="badge new">новый интерфейс</span>
+  </div>
+  <a href="screens/10.png" target="_blank"><img src="screens/10.png" alt="Шаг 3 · пояснение"></a>
+</figure>
+
+<figure class="card">
+  <div class="card-head">
+    <span class="num">11</span>
+    <div>
+      <h3>Шаг 4 · Oświadczenia</h3>
+      <p>Обязательные заявления. Без выбора варианта кнопка «Dalej» не работает.</p>
+    </div>
+    <span class="badge new">новый интерфейс</span>
+  </div>
+  <a href="screens/11.png" target="_blank"><img src="screens/11.png" alt="Шаг 4 · Oświadczenia"></a>
+</figure>
+
+<figure class="card">
+  <div class="card-head">
+    <span class="num">12</span>
+    <div>
+      <h3>Шаг 4 · способ подтверждения</h3>
+      <p>Выбор: oświadczenie о помощи de minimis или загрузка zaświadczeń.</p>
+    </div>
+    <span class="badge new">новый интерфейс</span>
+  </div>
+  <a href="screens/12.png" target="_blank"><img src="screens/12.png" alt="Шаг 4 · способ подтверждения"></a>
+</figure>
+
+<figure class="card">
+  <div class="card-head">
+    <span class="num">13</span>
+    <div>
+      <h3>Шаг 5 · de minimis ч.1</h3>
+      <p>Размер предприятия и класс деятельности PKD.</p>
+    </div>
+    <span class="badge new">новый интерфейс</span>
+  </div>
+  <a href="screens/13.png" target="_blank"><img src="screens/13.png" alt="Шаг 5 · de minimis ч.1"></a>
+</figure>
+
+<figure class="card">
+  <div class="card-head">
+    <span class="num">14</span>
+    <div>
+      <h3>Выбор PKD</h3>
+      <p>Класс выбирается из дерева PKD 2025, не набирается руками.</p>
+    </div>
+    <span class="badge new">новый интерфейс</span>
+  </div>
+  <a href="screens/14.png" target="_blank"><img src="screens/14.png" alt="Выбор PKD"></a>
+</figure>
+
+<figure class="card">
+  <div class="card-head">
+    <span class="num">15</span>
+    <div>
+      <h3>Поле PKD</h3>
+      <p>Код в формате 7311Z. Формат 73.11.Z система отклоняет.</p>
+    </div>
+    <span class="badge new">новый интерфейс</span>
+  </div>
+  <a href="screens/15.png" target="_blank"><img src="screens/15.png" alt="Поле PKD"></a>
+</figure>
+
+<figure class="card">
+  <div class="card-head">
+    <span class="num">16</span>
+    <div>
+      <h3>Шаг 6 · de minimis ч.2</h3>
+      <p>Пять вопросов о связях с другими предпринимателями, TAK/NIE.</p>
+    </div>
+    <span class="badge new">новый интерфейс</span>
+  </div>
+  <a href="screens/16.png" target="_blank"><img src="screens/16.png" alt="Шаг 6 · de minimis ч.2"></a>
+</figure>
+
+<figure class="card">
+  <div class="card-head">
+    <span class="num">17</span>
+    <div>
+      <h3>Шаг 7 · de minimis ч.3</h3>
+      <p>Вопросы о создании предприятия: слияние, takeover, разделение, преобразование.</p>
+    </div>
+    <span class="badge new">новый интерфейс</span>
+  </div>
+  <a href="screens/17.png" target="_blank"><img src="screens/17.png" alt="Шаг 7 · de minimis ч.3"></a>
+</figure>
+
+<figure class="card">
+  <div class="card-head">
+    <span class="num">18</span>
+    <div>
+      <h3>Шаг 8 · de minimis ч.4</h3>
+      <p>Секторы деятельности: рыболовство, сельское хозяйство, переработка.</p>
+    </div>
+    <span class="badge new">новый интерфейс</span>
+  </div>
+  <a href="screens/18.png" target="_blank"><img src="screens/18.png" alt="Шаг 8 · de minimis ч.4"></a>
+</figure>
+
+<figure class="card">
+  <div class="card-head">
+    <span class="num">19</span>
+    <div>
+      <h3>Шаг 9 · Załączniki</h3>
+      <p>Вложения: до 1 МБ на файл, до 5 МБ всего. Шаг проходится пустым.</p>
+    </div>
+    <span class="badge new">новый интерфейс</span>
+  </div>
+  <a href="screens/19.png" target="_blank"><img src="screens/19.png" alt="Шаг 9 · Załączniki"></a>
+</figure>
+
+<figure class="card">
+  <div class="card-head">
+    <span class="num">20</span>
+    <div>
+      <h3>Шаг 10 · Podsumowanie</h3>
+      <p>Сводка всех данных перед подписью. Здесь проверяется каждая цифра.</p>
+    </div>
+    <span class="badge new">новый интерфейс</span>
+  </div>
+  <a href="screens/20.png" target="_blank"><img src="screens/20.png" alt="Шаг 10 · Podsumowanie"></a>
+</figure>
+
+<figure class="card">
+  <div class="card-head">
+    <span class="num">21</span>
+    <div>
+      <h3>Просмотр документа</h3>
+      <p>Кнопка «Widok danych dokumentu» — PDF заявления до подписи.</p>
+    </div>
+    <span class="badge new">новый интерфейс</span>
+  </div>
+  <a href="screens/21.png" target="_blank"><img src="screens/21.png" alt="Просмотр документа"></a>
+</figure>
+
+<figure class="card">
+  <div class="card-head">
+    <span class="num">22</span>
+    <div>
+      <h3>Неотправленные документы</h3>
+      <p>Черновик после «Zapisz i zamknij» попадает в Zbiorcza wysyłka документов.</p>
+    </div>
+    <span class="badge new">новый интерфейс</span>
+  </div>
+  <a href="screens/22.png" target="_blank"><img src="screens/22.png" alt="Неотправленные документы"></a>
+</figure>
+
+<div class="note">
+<b>Что не снято и почему.</b> Три экрана существуют только после нажатия «Podpisz i wyślij»: выбор способа подписи, подтверждение кодом SMS и UPO. Это уже реальная отправка заявления в ZUS, поэтому кадры не снимались с боевого черновика.
+</div>
+
+<footer>
+  <span>Indra AI Agency · инструкция подготовлена по живому интерфейсу</span>
+  <span>Снимки: 20.10.2026 · 22 экрана</span>
+</footer>
+</div>
+</body>
+</html>
